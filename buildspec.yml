@@ -16,13 +16,10 @@ phases:
   post_build:
     commands:
       - echo "Build complete - $(ls -la output/)"
-      - |
-        if [ -n "$CLOUDFRONT_DIST_ID" ]; then
+      
           echo "Invalidating CloudFront cache..."
-          aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST_ID --paths "/*"
-        else
-          echo "No CloudFront distribution configured, skipping invalidation."
-        fi
+          aws cloudfront create-invalidation --distribution-id E1FE7JZ3LLAHU8 --paths "/*"
+    
 
 artifacts:
   files:
