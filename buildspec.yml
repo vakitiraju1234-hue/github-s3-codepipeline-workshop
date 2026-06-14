@@ -1,4 +1,4 @@
- version: 0.2
+version: 0.2
 
 phases:
   install:
@@ -23,6 +23,7 @@ phases:
         else
           echo "No CloudFront distribution configured, skipping invalidation."
         fi
+
 artifacts:
   files:
     - '**/*'
